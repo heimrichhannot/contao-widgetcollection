@@ -106,7 +106,7 @@ class IbanFrontendWidget extends FrontendWidget
                 $style = 'style="margin-right: 10px;"';
             }
 
-            $value =   Input::post($this->strName)[$i] ? Input::post($this->strName)[$i].'' : $singleInputs[$i];
+            $value =   $singleInputs[$i];
             $field .= '<input type="text" minlength="1" maxlength="1" 
 			            name="' . $this->strName . '[' . $i . ']" data-parent="' . $this->strName . '" 
 			            id="ctrl_' . $this->strId . '_' . $i . '" 
