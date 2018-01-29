@@ -1,5 +1,8 @@
 # Contao Widget Collection
 
+[![Latest Stable Version](https://poser.pugx.org/heimrichhannot/contao-widgetcollection/v/stable)](https://packagist.org/packages/heimrichhannot/contao-widgetcollection)
+[![Total Downloads](https://poser.pugx.org/heimrichhannot/contao-widgetcollection/downloads)](https://packagist.org/packages/heimrichhannot/contao-widgetcollection)
+
 > This module is currently only used in a single Contao 3 project and not generally tested. Feedback is welcome.
 
 This module is a collection of contao widgets that add some advanced (backend) validation to the input fields. They are designed to use with [Formhybrid](https://github.com/heimrichhannot/contao-formhybrid) module. 
