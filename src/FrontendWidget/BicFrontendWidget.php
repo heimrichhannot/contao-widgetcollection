@@ -39,7 +39,7 @@ class BicFrontendWidget extends FormTextField
         }
         if (!$validator::validate($varInput))
         {
-            $this->addError($GLOBALS['TL_LANG']['ERR']['widgetcollection']['bicNotValid']);
+            $this->addError($GLOBALS['TL_LANG']['ERR']['widgetcollection']['bicInvalid']);
         }
         return $value;
     }

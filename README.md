@@ -1,8 +1,8 @@
 # Contao Widget Collection
 
-> This module is currently only used in a single project and not generally tested. Feedback is welcome.
+> This module is currently only used in a single Contao 3 project and not generally tested. Feedback is welcome.
 
-This module is a collection of contao widgets. They are designed to use with [Formhybrid](https://github.com/heimrichhannot/contao-formhybrid) module. 
+This module is a collection of contao widgets that add some advanced (backend) validation to the input fields. They are designed to use with [Formhybrid](https://github.com/heimrichhannot/contao-formhybrid) module. 
 
 
 ## Install
@@ -27,6 +27,9 @@ Uses [IsoCodes](https://github.com/ronanguilloux/IsoCodes) for validation.
 
 ```
 'inputType' => 'ibanWidget',
+'eval' => [
+    'fields' => 22 // Number of input fields. 22 is the default value (DE). 
+]
 ```
 
 
