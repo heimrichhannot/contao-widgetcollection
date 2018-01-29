@@ -1,0 +1,19 @@
+<div class="<?= $this->groupClass; ?><?php if ($this->invisible): ?> invisible<?php endif; ?>">
+    <?php if(!$this->hideLabel): ?>
+    <label id="lbl_<?= $this->field->id; ?>" for="ctrl_<?= $this->field->id; ?>" class="control-label"><?= $this->field->label; ?>
+        <?= ($this->field->mandatory ? '<span class="invisible">'.$GLOBALS['TL_LANG']['MSC']['mandatory'].'</span> ' : ''); ?>
+        <?= ($this->field->mandatory ? '<span class="mandatory">*</span>' : ''); ?>
+    </label>
+    <?php endif; ?>
+    <div class="singleInput-wrapper">
+        <?php for($i=0;$i<$this->fields;$i++):?>
+            <?php $type = $this->pattern ? $this->pattern[$i] : 'number'; ?>
+            <input type="<?= $type ?>" min="0" max="9" minlength="1" maxlength="1" name="<?= $this->strField?>[<?= $i ?>]" class="singleInput singleInput_<?= $i ?>">
+        <?php endfor; ?>
+    </div>
+	<?= $this->help; ?>
+</div>
+<?php if ($this->field->explanation): ?>
+<div class="explanation check"><?= $this->field->explanation ?></div>
+<?php endif; ?>
+
