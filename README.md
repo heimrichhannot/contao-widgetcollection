@@ -58,7 +58,8 @@ Validates a birthday.
 ```
 'inputType' => 'birthdayWidget',
 'eval'      => [
-    'minAge' => 18, // Set a min age. Set 0 for no min date
+    'minAge' => 18, // Set a min age. Set 0 to disable
+    'maxAge' => 0, // Set a max age. Set 0 to disable
     'format' => 'd.m.Y' // The format of the input date
    
 ]

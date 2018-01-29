@@ -26,6 +26,7 @@ class BirthdayValidator implements ValidatorInterface
     {
         $format = $params['format'] ?: 'd.m.Y';
         $minAge = $params['minAge'] ?: 0;
+        $maxAge = $params['maxAge'] ?: 0;
 
         $date = DateTime::createFromFormat($format, $value);
         if (false === ($date && $date->format($format) == $value))
@@ -38,6 +39,15 @@ class BirthdayValidator implements ValidatorInterface
             $maxDate = DateTime::createFromFormat("Y-m-d", (date("Y") - $minAge).date("-m-d"));
 
             if ($date > $maxDate)
+            {
+                return false;
+            }
+        }
+        if ($maxAge > 0)
+        {
+            $maxDate = DateTime::createFromFormat("Y-m-d", (date("Y") - $maxAge).date("-m-d"));
+
+            if ($date < $maxDate)
             {
                 return false;
             }

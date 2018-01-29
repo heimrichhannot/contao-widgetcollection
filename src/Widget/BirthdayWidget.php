@@ -20,17 +20,19 @@ class BirthdayWidget extends TextField
     public function validator($varInput)
     {
         $value = parent::validator($varInput);
-        if ($this->hasErrors()) {
+        if ($this->hasErrors())
+        {
             return $value;
         }
         if (!BirthdayValidator::validate($varInput, [
             'minAge' => $this->minAge ?: 0,
-            'format' => $this->format ?: 'd.m.Y'])
-        )
+            'format' => $this->format ?: 'd.m.Y',
+            'maxAge' => $this->maxAge ?: 0
+        ]))
         {
-            $this->addError(str_replace('%i%', $this->minAge ?:0, $GLOBALS['TL_LANG']['ERR']['widgetcollection']['birthdayNotValid']));
+            $this->addError(str_replace('%i%', $this->minAge ?: 0, $GLOBALS['TL_LANG']['ERR']['widgetcollection']['birthdayNotValid']));
         }
-        return $value;
+        return $varInput;
     }
 
 

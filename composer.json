@@ -1,6 +1,6 @@
 {
     "name": "heimrichhannot/contao-widgetcollection",
-    "description": "Banking widgets for Contao Open Source CMS and Frontendedit Module",
+    "description": "A collection of contao widgets.",
     "keywords": ["contao"],
     "type": "contao-module",
     "homepage": "https://github.com/heimrichhannot/contao-banking_widgets",

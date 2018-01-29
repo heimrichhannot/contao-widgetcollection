@@ -17,22 +17,22 @@ use HeimrichHannot\WidgetCollection\Validator\BirthdayValidator;
 
 class BirthdayFrontendWidget extends FormTextField
 {
-    public function validator($varInput)
+    public function validator($varValue)
     {
-        $value = parent::validator($varInput);
+        $value = parent::validator($varValue);
         if ($this->hasErrors())
         {
             return $value;
         }
-        if (!BirthdayValidator::validate($varInput, [
+        if (!BirthdayValidator::validate($varValue, [
             'minAge' => $this->minAge ?: 0,
-            'format' => $this->format ?: 'd.m.Y'
-        ])
-        )
+            'format' => $this->format ?: 'd.m.Y',
+            'maxAge' => $this->maxAge ?: 0
+        ]))
         {
             $this->addError(str_replace('%i%', $this->minAge ?: 0, $GLOBALS['TL_LANG']['ERR']['widgetcollection']['birthdayNotValid']));
         }
-        return $value;
+        return $varValue;
     }
 
 }
