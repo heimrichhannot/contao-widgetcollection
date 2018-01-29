@@ -9,15 +9,16 @@
  */
 
 
-namespace HeimrichHannot\WidgetCollection\Widget;
+namespace HeimrichHannot\WidgetCollection\Validator;
 
 
-use Contao\TextField;
-
-class IbanWidget extends TextField
+interface ValidatorInterface
 {
-    public function validator($varInput)
-    {
-        return parent::generate($varInput);
-    }
+    /**
+     * @param string
+     *
+     * @return boolean
+     */
+    public static function validate($value, $params = []);
+
 }

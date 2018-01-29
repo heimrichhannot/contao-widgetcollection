@@ -13,23 +13,17 @@ namespace HeimrichHannot\WidgetCollection\Validator;
 
 
 use Contao\System;
-use IsoCodes\Iban;
-use RuntimeException;
+use IsoCodes\ZipCode;
 
-class IbanValidator implements ValidatorInterface
+class ZipCodeValidator implements ValidatorInterface
 {
-    /**
-     * Validated an IBAN
-     *
-     * @param string $iban
-     *
-     * @return boolen|string true if valid, error message if invalid
-     */
-    public static function validate ($iban, $params = [])
+
+    public static function validate($value, $params = [])
     {
         try {
-            return Iban::validate($iban);
-        } catch (RuntimeException $e) {
+            return ZipCode::validate($value, $params['country']);
+        } catch (\InvalidArgumentException $e)
+        {
             System::log($e->getMessage(), __METHOD__, TL_ERROR);
             return false;
         }

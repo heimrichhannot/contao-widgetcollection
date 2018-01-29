@@ -9,15 +9,16 @@
  */
 
 
-namespace HeimrichHannot\WidgetCollection\Widget;
+namespace HeimrichHannot\WidgetCollection\Validator;
 
 
-use Contao\TextField;
+use IsoCodes\SwiftBic;
 
-class IbanWidget extends TextField
+class BicValidator implements ValidatorInterface
 {
-    public function validator($varInput)
+
+    public static function validate($value, $params = [])
     {
-        return parent::generate($varInput);
+        return SwiftBic::validate($value);
     }
 }
