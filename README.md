@@ -20,22 +20,6 @@ composer require heimrichhannot/contao-widgetcollection
 ## Widgets
 
 
-### IBAN `ibanWidget`
-
-Validates an IBAN number.
-
-Uses [IsoCodes](https://github.com/ronanguilloux/IsoCodes) for validation.
-
-#### Usage
-
-```
-'inputType' => 'ibanWidget',
-'eval' => [
-    'fields' => 22 // Number of input fields. 22 is the default value (DE). 
-]
-```
-
-
 ### BIC (Swift) `bicWidget`
 
 Validates a BIC/SWIFT-Adress.
@@ -66,6 +50,38 @@ Validates a birthday.
 ```
 
 
+### IBAN `ibanWidget`
+
+Validates an IBAN number.
+
+Uses [IsoCodes](https://github.com/ronanguilloux/IsoCodes) for validation.
+
+#### Usage
+
+```
+'inputType' => 'ibanWidget',
+'eval' => [
+    'fields' => 22 // Number of input fields. 22 is the default value (DE). 
+]
+```
+
+
+### Phone `phoneWidget`
+
+Validates a phone number.
+
+Uses [IsoCodes](https://github.com/ronanguilloux/IsoCodes) for validation.
+
+#### Usage
+
+```
+'inputType' => 'phoneWidget',
+'eval' => [
+    'countries' => ['DE', 'AT'] // Array with country codes
+]
+```
+
+
 ### Postal code `postalWidget`
 
 Validate a postal code.
@@ -77,6 +93,6 @@ Uses [IsoCodes](https://github.com/ronanguilloux/IsoCodes) for validation.
 ```
 'inputType' => 'postalWidget',
 'eval'      => [
-    'country' => ['DE', 'AT'] // Array with country codes
+    'countries' => ['DE', 'AT'] // Array with country codes
 ]
 ```

@@ -20,3 +20,6 @@ $GLOBALS['BE_FFL']['postalWidget'] = 'HeimrichHannot\WidgetCollection\Widget\Zip
 
 $GLOBALS['TL_FFL']['birthdayWidget'] = 'HeimrichHannot\WidgetCollection\FrontendWidget\BirthdayFrontendWidget';
 $GLOBALS['BE_FFL']['birthdayWidget'] = 'HeimrichHannot\WidgetCollection\Widget\BirthdayWidget';
+
+$GLOBALS['TL_FFL']['phoneWidget'] = 'HeimrichHannot\WidgetCollection\FrontendWidget\PhoneFrontendWidget';
+$GLOBALS['BE_FFL']['phoneWidget'] = 'HeimrichHannot\WidgetCollection\Widget\PhoneWidget';
