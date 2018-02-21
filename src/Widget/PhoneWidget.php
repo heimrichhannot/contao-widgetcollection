@@ -30,7 +30,7 @@ class PhoneWidget extends TextField
             $this->addError(str_replace(
                 '%s%',
                 $this->countries
-                    ? $GLOBALS['TL_LANG']['ERR']['widgetcollection']['phoneNumberNotValid_in'].explode(', ', $this->countries)
+                    ? $GLOBALS['TL_LANG']['ERR']['widgetcollection']['phoneNumberNotValid_in'].implode(', ', $this->countries)
                     : '',
                 $GLOBALS['TL_LANG']['ERR']['widgetcollection']['phoneNumberNotValid']
             ));
