@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 #### Added
 * phone widget
 
+#### Changed
+* formhybrid 2.x support
+
 ## [1.1.1] - 2018-01-29
 
 #### Fixed
