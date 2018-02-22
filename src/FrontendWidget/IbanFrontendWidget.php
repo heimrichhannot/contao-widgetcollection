@@ -97,22 +97,26 @@ class IbanFrontendWidget extends FrontendWidget
 
         $seperate = $this->format ?: [4, 8, 12, 16, 20];
 
-        $field    = '<div class="singleInput-wrapper">';
+        $field    = '<div class="singleInput-wrapper" '.$this->getAttributes().'>';
         for ($i = 0; $i < $fields; $i++)
         {
-            $style = "";
+            $seperateClass = "";
             if (in_array(($i + 1), $seperate))
             {
-                $style = 'style="margin-right: 10px;"';
+
+                $seperateClass = 'seperate"';
             }
 
             $value =   $singleInputs[$i];
-            $field .= '<input type="text" minlength="1" maxlength="1" 
-			            name="' . $this->strName . '[' . $i . ']" data-parent="' . $this->strName . '" 
+            $field .= '<input 
+                        type="text" 
+                        minlength="1" 
+                        maxlength="1" 
+			            name="' . $this->strName . '[' . $i . ']" 
+			            data-parent="' . $this->strName . '" 
 			            id="ctrl_' . $this->strId . '_' . $i . '" 
-			            class="singleInput singleInput_' . $i . '" 
-			            value="' . $value . '" 
-			            ' . $style . '>';
+			            class="singleInput singleInput_' . $i . ' ' . $seperateClass .'" 
+			            value="' . $value . '">';
         }
         $field .= '</div>';
 

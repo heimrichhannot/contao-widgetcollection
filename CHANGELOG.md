@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2018-02-22
+
+#### Added 
+* iban frontend widget now support attributes
+
+#### Changed
+* iban widgets now adds a class instead of a fixed margin to groups
+
 ## [1.2.0] - 2018-02-21
 
 #### Added
