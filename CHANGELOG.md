@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.1] - 2018-02-22
+
+#### Changed 
+* bic widget now sets min and max length itself (min 8, max 11)
+
 ## [1.3.0] - 2018-02-22
 
 #### Added 

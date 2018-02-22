@@ -26,6 +26,8 @@ class BicWidget extends TextField
     {
         parent::__construct($arrAttributes);
         $this->validator = new BicValidator();
+        $this->minlength = 8;
+        $this->maxlength = 11;
     }
 
 
