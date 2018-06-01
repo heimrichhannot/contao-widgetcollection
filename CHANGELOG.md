@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4.1] - 2018-06-
+
+#### Fix
+* bug relating to encription and stored values for iban widget
+
 ## [1.4.0] - 2018-06-01
 
 #### Added

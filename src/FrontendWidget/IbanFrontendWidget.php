@@ -86,9 +86,9 @@ class IbanFrontendWidget extends FrontendWidget
         $singleInputs = Input::post($this->strName);
         if (!$singleInputs || !(count($singleInputs) == $fields))
         {
-            if ($this->varValue)
+            if ($this->varValue && !empty($value = Encryption::decrypt($this->varValue)))
             {
-                $singleInputs = $this->singleInputFromValue(Encryption::decrypt($this->varValue), $fields);
+                $singleInputs = $this->singleInputFromValue($value, $fields);
             } elseif ($this->prefill)
             {
                 $singleInputs = $this->singleInputFromValue($this->prefill, $fields);
