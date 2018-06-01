@@ -61,7 +61,8 @@ Uses [IsoCodes](https://github.com/ronanguilloux/IsoCodes) for validation.
 ```
 'inputType' => 'ibanWidget',
 'eval' => [
-    'fields' => 22 // Number of input fields. 22 is the default value (DE). 
+    'fields' => 22, // Number of input fields. Default is 22. 
+    'prefill' => '' // A optional prefilled value, for example to set the typical country (example: "DE").
 ]
 ```
 

@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2018-06-01
+
+#### Added
+* prefilled option for IBAN widget
+
 ## [1.3.1] - 2018-02-22
 
 #### Changed 

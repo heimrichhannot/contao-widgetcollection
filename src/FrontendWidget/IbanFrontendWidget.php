@@ -86,12 +86,15 @@ class IbanFrontendWidget extends FrontendWidget
         $singleInputs = Input::post($this->strName);
         if (!$singleInputs || !(count($singleInputs) == $fields))
         {
-            if ('' != $this->varValue)
+            if ($this->varValue)
             {
-                $singleInputs = str_split(Encryption::decrypt($this->varValue), 1);
-            }
-            else {
-                $singleInputs = array_fill(0, 22, '');
+                $singleInputs = $this->singleInputFromValue(Encryption::decrypt($this->varValue), $fields);
+            } elseif ($this->prefill)
+            {
+                $singleInputs = $this->singleInputFromValue($this->prefill, $fields);
+            } else
+            {
+                $singleInputs = array_fill(0, $fields, '');
             }
         }
 
@@ -121,6 +124,25 @@ class IbanFrontendWidget extends FrontendWidget
         $field .= '</div>';
 
         return $field . $this->addSubmit();
+    }
+
+    /**
+     * Created a single input array based on given value.
+     * If value is to short, array will be filled with empty elements.
+     *
+     * @param string $value
+     * @param int $fieldLength
+     * @return array
+     */
+    protected function singleInputFromValue($value, $fieldLength)
+    {
+        $singleInputs = str_split($value, 1);
+        $prefillLength = count($singleInputs);
+        if ($prefillLength < $fieldLength)
+        {
+            $singleInputs = array_merge($singleInputs, array_fill($prefillLength - 1, $fieldLength - $prefillLength, ""));
+        }
+        return $singleInputs;
     }
 
     /**
